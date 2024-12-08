@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/PortawebHZ/static/css/main.33331345.css",
-    "main.js": "/PortawebHZ/static/js/main.fecf8f5e.js",
+    "main.js": "/PortawebHZ/static/js/main.2cc21229.js",
     "static/js/453.24c88e97.chunk.js": "/PortawebHZ/static/js/453.24c88e97.chunk.js",
     "index.html": "/PortawebHZ/index.html",
     "main.33331345.css.map": "/PortawebHZ/static/css/main.33331345.css.map",
-    "main.fecf8f5e.js.map": "/PortawebHZ/static/js/main.fecf8f5e.js.map",
+    "main.2cc21229.js.map": "/PortawebHZ/static/js/main.2cc21229.js.map",
     "453.24c88e97.chunk.js.map": "/PortawebHZ/static/js/453.24c88e97.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.33331345.css",
-    "static/js/main.fecf8f5e.js"
+    "static/js/main.2cc21229.js"
   ]
 }
