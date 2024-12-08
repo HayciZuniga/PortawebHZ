@@ -13,125 +13,127 @@ import { deepPurple } from '@mui/material/colors';
 
 export default function App() {
   return (
-    <Grid>
-    
-      <Box  sx={{
-          backgroundImage: `url('https://pinguinodigital.com/wp-content/uploads/2020/06/recursos-de-dise%C3%B1o-gr%C3%A1fico1.jpg')`,
-          backgroundSize: '100%', // Ajusta la imagen para que cubra todo el área del contenedor
-          backgroundRepeat: 'no-repeat', // Evita que la imagen se repita
-          backgroundPosition: 'center', // Centra la imagen en el contenedor
-          height: "240px",
-          position: "relative",
-          display:"flex",
-          justifyContent:"center",
-          alignItems:"left",
-          fontSize:"100px",
-          color:"#FFFFFF"
-            //background:
-             // "linear-gradient(to right, white 0%, #5458ca 30%, #575cfc 70%, white 100%)",
-           // boxShadow:
-             // "10px 0 10px -10px rgba(0, 0, 0, 0.3), -10px 0 10px -10px rgba(0, 0, 0, 0.3)",
-        }}>
-          <Typography variant="h1" sx={{marginTop:10}} gutterBottom>
-          Portafolio Web
+    <Grid container spacing={2}>
+      {/* Encabezado */}
+      <Grid item xs={12}>
+        <Box
+          sx={{
+            backgroundImage: `url('https://pinguinodigital.com/wp-content/uploads/2020/06/recursos-de-dise%C3%B1o-gr%C3%A1fico1.jpg')`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            height: { xs: '200px', md: '300px' },
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            color: '#FFFFFF',
+            textAlign: 'center',
+          }}
+        >
+          <Typography
+            variant="h1"
+            sx={{
+              fontSize: { xs: '2rem', md: '4rem' },
+              fontWeight: 'bold',
+              margin: 0,
+            }}
+          >
+            Portafolio Web
           </Typography>
-        
-       </Box> 
- 
-        <Box sx={{background:"#7b4bbe"}}>
-       <Card sx={{ display: 'flex', boxShadow: 3, maxWidth: 650, margin: 'auto', marginTop:3, background:"#b19bff", color:"#ffffff"}}>
-      {/* Foto de presentación */}
-      <CardMedia
-        component="img"
-        sx={{ width: 200, height: 265 }}
-        image="https://i.postimg.cc/J0yjwZFd/perfil-hayci.png"
-        alt="Foto de perfil"
-      />
+        </Box>
+      </Grid>
 
-      {/* Contenido */}
-      <CardContent sx={{ flex: 1, color:"#ffffff"}}>
-        {/* Nombre y descripción */}
-        <Typography gutterBottom variant="h5" component="div">
-          HAYCI ZUNIGA
-        </Typography>
-        <Typography variant="body2" gutterBottom>
-          Desarrolladora front-end.
-        </Typography>
-         {/* Iconos de contacto */}
-         <Grid container spacing={2} alignItems="center">
-          {/* Correo */}
-          <Grid item>
-            <IconButton aria-label="correo" sx={{ color:"#3f0773" }} >
-            <BusinessIcon/>
-            </IconButton>
-          </Grid>
-          <Grid item xs>
-            <Typography variant="body2">
-             Estudiante de Universidad Gerardo Barrios
+      {/* Tarjeta principal */}
+      <Grid item xs={12} md={8} lg={6} sx={{ margin: 'auto' }}>
+        <Card sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, boxShadow: 3, background: '#b19bff', color: '#ffffff' }}>
+          {/* Foto de presentación */}
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center', // Centra horizontalmente
+              alignItems: 'center', // Centra verticalmente
+              width: { xs: '100%', md: 200 }, // Asegura el tamaño del contenedor
+              height: { xs: 'auto', md: 265 }, // Ajusta la altura según sea necesario
+              overflow: 'hidden', // Evita que la imagen se desborde
+            }}
+          >
+            <CardMedia
+              component="img"
+              sx={{
+                width: 'auto', // Ajusta el ancho de la imagen
+                height: 'auto', // Mantiene la proporción
+                objectFit: 'contain', // Asegura que la imagen no se recorte
+              }}
+              image="https://i.postimg.cc/J0yjwZFd/perfil-hayci.png"
+              alt="Foto de perfil"
+            />
+          </Box>
+          {/* Contenido */}
+          <CardContent sx={{ flex: 1 }}>
+            <Typography variant="h5"
+            sx={{
+              fontWeight: 'bold',
+              margin: 0,
+            }}>
+              HAYCI ZUNIGA
             </Typography>
-          </Grid>
-          </Grid>
+            <Typography variant="body2" gutterBottom>
+              Desarrolladora front-end.
+            </Typography>
+            {/* Iconos de contacto */}
+            {[
+              {
+                icon: <BusinessIcon />,
+                text: 'Egresada de la Universidad Gerardo Barrios',
+              },
+              {
+                icon: <EmailIcon />,
+                text: <img src="https://i.postimg.cc/JzPGLTtg/correo.png" alt="Correo" style={{ width: '54%', height: 'auto' }} />,
+              },
+              {
+                icon: <GitHubIcon />,
+                text: <Link href="https://github.com/HayciZuniga" sx={{ color: deepPurple[500] }}>HayciZuniga</Link>,
+              },
+              {
+                icon: <LinkedInIcon />,
+                text: <Link href="https://www.linkedin.com/in/hayci-zuniga-00b7b7319/" sx={{ color: deepPurple[500] }}>Perfil</Link>,
+              },
+            ].map((item, index) => (
+              <Grid container spacing={2} alignItems="center" key={index}>
+                <Grid item>
+                  <IconButton sx={{ color: '#3f0773' }}>{item.icon}</IconButton>
+                </Grid>
+                <Grid item xs>
+                  <Typography variant="body2">{item.text}</Typography>
+                </Grid>
+              </Grid>
+            ))}
+          </CardContent>
+        </Card>
+      </Grid>
 
-        {/* Iconos de contacto */}
-        <Grid container spacing={2} alignItems="center">
-          {/* Correo */}
-          <Grid item>
-            <IconButton aria-label="correo" sx={{ color:"#3f0773" }}>
-              <EmailIcon />
-            </IconButton>
-          </Grid>
-            <Grid item xs>
-          <img 
-            src="https://i.postimg.cc/JzPGLTtg/correo.png" 
-            alt="Descripción de la imagen" 
-            style={{ width: '49%', maxHeight: '50px', objectFit: 'contain' }} 
-          />
-        </Grid>
-         
-        </Grid>
-        {/* Iconos de cgithub */}
-        <Grid container spacing={2} alignItems="center">
-          {/* Correo */}
-          <Grid item>
-            <IconButton aria-label="correo" sx={{ color:"#3f0773"}}>
-              <GitHubIcon />
-            </IconButton>
-          </Grid>
-          <Grid item xs>
-          <Link href="https://github.com/HayciZuniga"  sx={{ color: deepPurple[500] }}>HayciZuniga</Link>
-          </Grid>
-        </Grid>
-           {/* Iconos de cgithub */}
-          <Grid container spacing={2} alignItems="center">
-          {/* Correo */}
-          <Grid item>
-            <IconButton aria-label="correo" sx={{ color:"#3f0773" }}>
-              <LinkedInIcon/>
-            </IconButton>
-          </Grid>
-          <Grid item xs>
-          <Link href="https://www.linkedin.com/in/hayci-zuniga-00b7b7319/"  sx={{ color: deepPurple[500] }}>Perfil</Link>
-          </Grid>
-        </Grid>
-      </CardContent>
-    </Card>
-    </Box>
-    <Pcards/>
-    <Box
-      component="footer"
-      sx={{
-        backgroundColor: '#f5f5f5', // Fondo del pie de página
-        padding: 2, // Espaciado interno
-        textAlign: 'center', // Centrar texto
-        borderTop: '1px solid #e0e0e0', // Línea superior
-        marginTop: 5, // Espaciado superior
-      }}
-    >
-      <Typography variant="body2" color="text.secondary">
-        © {new Date().getFullYear()} HayciZuniga. Todos los derechos reservados.
-      </Typography>
-    </Box>
+      {/* Otros componentes */}
+      <Grid item xs={12}>
+        <Pcards />
+      </Grid>
+
+      {/* Footer */}
+      <Grid item xs={12}>
+        <Box
+          component="footer"
+          sx={{
+            backgroundColor: '#f5f5f5',
+            padding: 2,
+            textAlign: 'center',
+            borderTop: '1px solid #e0e0e0',
+            marginTop: 5,
+          }}
+        >
+          <Typography variant="body2" color="text.secondary">
+            © {new Date().getFullYear()} HayciZuniga. Todos los derechos reservados.
+          </Typography>
+        </Box>
+      </Grid>
     </Grid>
-    
   );
 }
